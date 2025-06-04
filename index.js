@@ -1,8 +1,10 @@
+import 'dotenv/config';
 import { Telegraf, Markup } from "telegraf";
+
 import Fuse from "fuse.js";
 import quotes from "./quotes.json" with { type: "json"}
 
-const bot = new Telegraf("8033387091:AAEU5gYQert52LiQkxkp31fVuHWP3weLYxk")
+const bot = new Telegraf(process.env.BOT_TOKEN)
 
 const fuse = new Fuse(quotes, {
   keys: ['tags'],
